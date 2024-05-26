@@ -6,13 +6,7 @@ console.log("Js File : validation_Common.js");
 document.addEventListener("DOMContentLoaded", function () {
   update_ButtonState_MakePurchase();
   update_ButtonState_CouponApply();
-  //onPageRefresh();
 });
-
-/* ..........
-    flag : 
-.......... */
-//let flag;
 
 /* ..........
     Function : Value Reset on Page Load

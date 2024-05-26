@@ -7,9 +7,6 @@ let vatPercent = 5;
     Function : Add Product To Cart
 .......... */
 function addProductToCart() {
-  console.log("Function : addProductToCart");
-  debugger;
-
   const productName = getTextElementValueStringById("product-name");
   const productPrice = getTextElementValueById("product-price");
 
@@ -25,9 +22,6 @@ function addProductToCart() {
     Function : CRUD : Add Product Data To Cart EntryList
 .......... */
 function addProductToCartEntryList(nameOfAddedItem, priceOfAddedItem) {
-  console.log("Function : addProductToCartEntryList");
-  debugger;
-
   const cartEntryList = document.getElementById("cart-entrylist");
   const countProduct = cartEntryList.childElementCount;
   const uniqId = countProduct + 1;
@@ -66,17 +60,12 @@ function addProductToCartEntryList(nameOfAddedItem, priceOfAddedItem) {
                           `;
 
   cartEntryList.appendChild(entryData);
-
-  console.log(nameOfAddedItem + " " + priceOfAddedItem);
 }
 
 /* ..........
       Function : CRUD : Delete Product from Cart EntryList
   .......... */
 function delete_CartProduct(dataId, dataPriceId) {
-  console.log("Function : delete_CartProduct");
-  debugger;
-
   const data_Price = getTextElementValueById(dataPriceId);
   const cartProductPriceTotalPrevious = getTextElementValueById("total-price");
 
@@ -91,23 +80,12 @@ function delete_CartProduct(dataId, dataPriceId) {
 
   /* ... Validation Checking : Button ... */
   update_ButtonState_MakePurchase();
-
-  console.log(
-    dataId,
-    cartProductPriceTotalPrevious,
-    dataPriceId,
-    data_Price,
-    cartProductPriceTotalCurrent
-  );
 }
 
 /* ..........
     Function : Calculation : Added Product Price to Cart
 .......... */
 function calculateCartAddingPrice(priceOfAddedItem) {
-  console.log("Function : calculateCartAddingPrice");
-  debugger;
-
   const cartProductPriceTotalPrevious = getTextElementValueById("total-price");
   const cartProductPriceTotalCurrent =
     cartProductPriceTotalPrevious + priceOfAddedItem;
@@ -115,21 +93,12 @@ function calculateCartAddingPrice(priceOfAddedItem) {
 
   calculateCartTotalPrice(cartProductPriceTotalCurrent);
   calculateDiscountPrice(cartProductPriceTotalCurrent);
-
-  console.log(
-    cartProductPriceTotalPrevious,
-    priceOfAddedItem,
-    cartProductPriceTotalCurrent
-  );
 }
 
 /* ..........
       Function : Calculation : Cart Total Price
 .......... */
 function calculateCartTotalPrice(onlyCartProductPriceTotal) {
-  console.log("Function : calculateCartTotalPrice");
-  debugger;
-
   setTextElementValueById("vat-percent", vatPercent);
   const vatAmountAdding = vatCalculation(onlyCartProductPriceTotal);
   const shippingFeeAdding = shippingFeeCalculation(onlyCartProductPriceTotal);
@@ -137,17 +106,12 @@ function calculateCartTotalPrice(onlyCartProductPriceTotal) {
   const cartTotalPrice =
     onlyCartProductPriceTotal + vatAmountAdding + shippingFeeAdding;
   setTextElementValueById("total", cartTotalPrice);
-
-  console.log(onlyCartProductPriceTotal + " " + cartTotalPrice);
 }
 
 /* ..........
       Function : Calculation : Vat 
 .......... */
 function vatCalculation(onlyCartProductPriceTotal) {
-  console.log("Function : vatCalculation");
-  debugger;
-
   const vat_Amount = onlyCartProductPriceTotal * (vatPercent / 100);
   setTextElementValueById("product-vat", vat_Amount);
 
@@ -162,9 +126,6 @@ function vatCalculation(onlyCartProductPriceTotal) {
       Function : Calculation : Shipping Fee 
 .......... */
 function shippingFeeCalculation(onlyCartProductPriceTotal) {
-  console.log("Function : shippingFeeCalculation");
-  debugger;
-
   let shippingFee = shippingCharge;
 
   if (onlyCartProductPriceTotal !== 0) {
@@ -181,17 +142,12 @@ function shippingFeeCalculation(onlyCartProductPriceTotal) {
     Function : Validation : Button : Make Purchase : Update Button State for Purchase
 .......... */
 function update_ButtonState_MakePurchase() {
-  console.log("Function : update_ButtonState_MakePurchase");
-  debugger;
-
   const btn_MakePurchase = document.getElementById("btn-make-purchase");
   const cartTotalPrice = getTextElementValueById("total");
 
   if (cartTotalPrice !== 0) {
     btn_MakePurchase.disabled = false;
-    //btn_MakePurchase.classList.add("cursor-not-allowed", "opacity-50");
   } else {
     btn_MakePurchase.disabled = true;
-    //btn_MakePurchase.classList.remove("cursor-not-allowed", "opacity-50");
   }
 }

@@ -13,9 +13,6 @@ if (coupon == coupon_Code_1) {
     Function : Button : Coupon : Coupon Code Copy
 .......... */
 function couponCodeCopy() {
-  console.log("Function : couponCodeCopy");
-  debugger;
-
   const couponCodeGet = getTextElementValueStringById("coupon-code-collect");
   setInputFieldValueById("coupon-code", couponCodeGet);
 
@@ -26,9 +23,6 @@ function couponCodeCopy() {
     Function : Button : Apply : Coupon Discount Price Apply
 .......... */
 function applyCouponDiscount() {
-  console.log("Function : applyCouponDiscount");
-  debugger;
-
   couponApply_flag = 0;
 
   const inputField_Applied_Coupon = getInputFieldValueStringById("coupon-code");
@@ -54,9 +48,6 @@ function applyCouponDiscount() {
     Function : Calculation : Coupon Discount Price
 .......... */
 function calculateDiscountPrice(onlyCartProductPriceTotal) {
-  console.log("Function : calculateDiscountPrice");
-  debugger;
-
   if (couponApply_flag === 1 && onlyCartProductPriceTotal >= 200) {
     const discountAmount = onlyCartProductPriceTotal * (discountPercent / 100);
     setTextElementValueById("discount-price", discountAmount);
@@ -80,9 +71,6 @@ function calculateDiscountPrice(onlyCartProductPriceTotal) {
     Function : Coupon Code Remove
 .......... */
 function couponCodeRemove() {
-  console.log("Function : couponCodeRemove");
-  debugger;
-
   couponApply_flag = 0;
 
   resetInnerHtmlComponent("vMsg-couponApply", "");
@@ -101,9 +89,6 @@ function couponCodeRemove() {
     Function : Validation : Button : Apply : Update Button State for Coupon Apply
 .......... */
 function update_ButtonState_CouponApply() {
-  console.log("Function : update_ButtonState_CouponApply");
-  debugger;
-
   const inputField_Apply_Coupon = document.getElementById("coupon-code");
   const btn_CouponApply = document.getElementById("btn-coupon-apply");
 
@@ -127,7 +112,6 @@ function update_ButtonState_CouponApply() {
 .......... */
 function vMsgShow_ValidCouponApply(couponCode, discountPercentage) {
   const vMsg_CouponApply = document.getElementById("vMsg-couponApply");
-  /* .......... Clear previous messages .......... */
   vMsg_CouponApply.innerHTML = "";
 
   const vMsgForCouponApply = document.createElement("p");
@@ -148,8 +132,6 @@ function vMsgShow_ValidCouponApply(couponCode, discountPercentage) {
 function vMsgShow_InvalidCouponApply(couponCode) {
   const vMsg_CouponApply = document.getElementById("vMsg-couponApply");
   vMsg_CouponApply.innerHTML = "";
-
-  //   const vMsg_CouponApply = resetInnerHtmlComponent("vMsg-couponApply", "");
 
   const vMsgForCouponApply = document.createElement("p");
   vMsgForCouponApply.classList.add("font-bold", "text-xs", "text-red-300");
