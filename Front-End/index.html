@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>E-Market</title>
+
+    <!-- .......... Icons : Online Link .......... -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- .......... CSS Framework : Online Link .......... -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- .......... JavaScript Files : Online Link .......... -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <header>
+      <!-- Toast Alert Container -->
+      <div
+        id="toast-container"
+        class="z-10 fixed top-5 right-5 space-y-4"
+      ></div>
+
+      <!-- Header : Section No.1 : Sale's Offer Banner -->
+      <banner
+        class="flex flex-col md:flex-row lg:flex-row bg-orange-100 mx-auto"
+      >
+        <!-- Discount Information -->
+        <div class="text-center w-[50%] my-auto mx-auto">
+          <h3 class="font-semibold text-xl text-gray-500">
+            * * * SALE FEVER * * *
+          </h3>
+
+          <h1 class="font-bold text-4xl mt-6 mb-8">
+            Purchase TK 200 or <br />
+            above & get <span class="text-pink-600">20% off</span>
+          </h1>
+
+          <h4 class="font-semibold">
+            Use Promo Code
+            <button
+              id="coupon-code-collect"
+              onclick="couponCodeCopy()"
+              class="btn btn-sm text-white bg-pink-600"
+            >
+              SELL200
+            </button>
+          </h4>
+        </div>
+
+        <!-- Promotional Picture -->
+        <figure class="w-[50%] mx-auto">
+          <img
+            src="./images/Summer 1.png"
+            alt="Banner Image"
+            class="h-[400px] mx-auto"
+          />
+        </figure>
+      </banner>
+    </header>
+
+    <main class="flex flex-col md:flex-row lg:flex-row">
+      <!-- Section No.1 : Products' Card -->
+      <section class="mx-auto">
+        <!-- Division No.1 : Kitchenware -->
+        <div class="mt-10">
+          <h3 class="font-bold text-xl text-gray-400 mb-5 pl-1">Kitchenware</h3>
+
+          <products
+            class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-4"
+          >
+            <!-- Kitchenware : Card No.1 -->
+            <div class="card w-80 bg-base-100 shadow-xl xs:mt-2 sm:mt-2">
+              <figure class="px-10 pt-10">
+                <img
+                  src="./images/prod1.png"
+                  alt="K.Accessories"
+                  class="rounded-xl"
+                />
+              </figure>
+
+              <div class="card-body items-center text-center">
+                <div class="text-orange-400">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <h2 id="product-name" class="card-title">K.Accessories</h2>
+
+                <p class="text-gray-400">
+                  <span id="product-price">100.00</span> BDT
+                </p>
+
+                <div class="card-actions">
+                  <button
+                    onclick="addProductToCart()"
+                    class="btn btn-sm text-white bg-violet-600"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kitchenware : Card No.2 -->
+            <div class="card w-80 bg-base-100 shadow-xl xs:mt-2 sm:mt-2">
+              <figure class="px-10 pt-10">
+                <img
+                  src="./images/prod2.png"
+                  alt="K.Accessories"
+                  class="rounded-xl"
+                />
+              </figure>
+
+              <div class="card-body items-center text-center">
+                <div class="text-orange-400">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <h2 id="product-name" class="card-title">K.Accessories</h2>
+
+                <p class="text-gray-400">
+                  <span id="product-price">800.00</span> BDT
+                </p>
+
+                <div class="card-actions">
+                  <button
+                    onclick="addProductToCart()"
+                    class="btn btn-sm text-white bg-violet-600"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kitchenware : Card No.3 -->
+            <div class="card w-80 bg-base-100 shadow-xl xs:mt-2 sm:mt-2">
+              <figure class="px-10 pt-10">
+                <img
+                  src="./images/prod3.png"
+                  alt="Home Cooker"
+                  class="rounded-xl"
+                />
+              </figure>
+
+              <div class="card-body items-center text-center">
+                <div class="text-orange-400">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <h2 id="product-name" class="card-title">Home Cooker</h2>
+
+                <p class="text-gray-400">
+                  <span id="product-price">3000.00</span> BDT
+                </p>
+
+                <div class="card-actions">
+                  <button
+                    onclick="addProductToCart()"
+                    class="btn btn-sm text-white bg-violet-600"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </products>
+        </div>
+
+        <!-- Division No.2 : Sportswear -->
+        <div class="mt-10">
+          <h3 class="font-bold text-xl text-gray-400 mb-5 pl-1">Sportswear</h3>
+
+          <products
+            class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-4"
+          >
+            <!-- Sportswear : Card No.1 -->
+            <div class="card w-80 bg-base-100 shadow-xl xs:mt-2 sm:mt-2">
+              <figure class="px-10 pt-10">
+                <img
+                  src="./images/prod4.png"
+                  alt="Sports Back Cap"
+                  class="rounded-xl"
+                />
+              </figure>
+
+              <div class="card-body items-center text-center">
+                <div class="text-orange-400">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <h2 id="product-name" class="card-title">Sports Back Cap</h2>
+
+                <p class="text-gray-400">
+                  <span id="product-price">500.00</span> BDT
+                </p>
+
+                <div class="card-actions">
+                  <button
+                    onclick="addProductToCart()"
+                    class="btn btn-sm text-white bg-violet-600"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sportswear : Card No.2 -->
+            <div class="card w-80 bg-base-100 shadow-xl xs:mt-2 sm:mt-2">
+              <figure class="px-10 pt-10">
+                <img
+                  src="./images/prod5.png"
+                  alt="Full Jersey Set"
+                  class="rounded-xl"
+                />
+              </figure>
+
+              <div class="card-body items-center text-center">
+                <div class="text-orange-400">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <h2 id="product-name" class="card-title">Full Jersey Set</h2>
+
+                <p class="text-gray-400">
+                  <span id="product-price">4000.00</span> BDT
+                </p>
+
+                <div class="card-actions">
+                  <button
+                    onclick="addProductToCart()"
+                    class="btn btn-sm text-white bg-violet-600"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sportswear : Card No.3 -->
+            <div class="card w-80 bg-base-100 shadow-xl xs:mt-2 sm:mt-2">
+              <figure class="px-10 pt-10">
+                <img
+                  src="./images/prod6.png"
+                  alt="Sports cates"
+                  class="rounded-xl"
+                />
+              </figure>
+
+              <div class="card-body items-center text-center">
+                <div class="text-orange-400">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <h2 id="product-name" class="card-title">Sports cates</h2>
+
+                <p class="text-gray-400">
+                  <span id="product-price">12000.00</span> BDT
+                </p>
+
+                <div class="card-actions">
+                  <button
+                    onclick="addProductToCart()"
+                    class="btn btn-sm text-white bg-violet-600"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </products>
+        </div>
+
+        <!-- Division No.3 : Furniture -->
+        <div class="mt-10">
+          <h3 class="font-bold text-xl text-gray-400 mb-5 pl-1">Furniture</h3>
+
+          <products
+            class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-4"
+          >
+            <!-- Furniture : Card No.1 -->
+            <div class="card w-80 bg-base-100 shadow-xl xs:mt-2 sm:mt-2">
+              <figure class="px-10 pt-10">
+                <img
+                  src="./images/prod7.png"
+                  alt="Single Relax Chair"
+                  class="rounded-xl"
+                />
+              </figure>
+
+              <div class="card-body items-center text-center">
+                <div class="text-orange-400">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <h2 id="product-name" class="card-title">Single Relax Chair</h2>
+
+                <p class="text-gray-400">
+                  <span id="product-price">14000.00</span> BDT
+                </p>
+
+                <div class="card-actions">
+                  <button
+                    onclick="addProductToCart()"
+                    class="btn btn-sm text-white bg-violet-600"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Furniture : Card No.2 -->
+            <div class="card w-80 bg-base-100 shadow-xl xs:mt-2 sm:mt-2">
+              <figure class="px-10 pt-10">
+                <img
+                  src="./images/prod8.png"
+                  alt="Children play"
+                  class="rounded-xl"
+                />
+              </figure>
+
+              <div class="card-body items-center text-center">
+                <div class="text-orange-400">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <h2 id="product-name" class="card-title">Children play</h2>
+
+                <p class="text-gray-400">
+                  <span id="product-price">7000.00</span> BDT
+                </p>
+
+                <div class="card-actions">
+                  <button
+                    onclick="addProductToCart()"
+                    class="btn btn-sm text-white bg-violet-600"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Furniture : Card No.3 -->
+            <div class="card w-80 bg-base-100 shadow-xl xs:mt-2 sm:mt-2">
+              <figure class="px-10 pt-10">
+                <img
+                  src="./images/prod9.png"
+                  alt="Flexible Sofa"
+                  class="rounded-xl"
+                />
+              </figure>
+
+              <div class="card-body items-center text-center">
+                <div class="text-orange-400">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <h2 id="product-name" class="card-title">Flexible Sofa</h2>
+
+                <p class="text-gray-400">
+                  <span id="product-price">26000.00</span> BDT
+                </p>
+
+                <div class="card-actions">
+                  <button
+                    onclick="addProductToCart()"
+                    class="btn btn-sm text-white bg-violet-600"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </products>
+        </div>
+      </section>
+
+      <!-- Section No.2 : Order-Cart -->
+      <section class="mx-auto">
+        <div class="mt-24">
+          <!-- Division No.1 : Card : Coupon -->
+          <div class="card w-80 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Have coupon?</h2>
+
+              <div class="flex flex-row">
+                <input
+                  type="text"
+                  name=""
+                  id="coupon-code"
+                  class="border rounded-md px-2"
+                  placeholder="Coupon Code"
+                />
+
+                <div class="card-actions justify-end">
+                  <!-- Button : Apply Coupon Code -->
+                  <button
+                    id="btn-coupon-apply"
+                    onclick="applyCouponDiscount()"
+                    class="btn text-white bg-pink-600"
+                  >
+                    Apply
+                  </button>
+                </div>
+              </div>
+
+              <!-- Msg Validation : Coupon Apply -->
+              <div id="vMsg-couponApply" class="my-2"></div>
+            </div>
+          </div>
+
+          <!-- Division No.2 : Cart Product and Total Calculation-->
+          <div class="card w-80 shadow-xl mt-5">
+            <div class="card-body">
+              <!-- Add to Cart : Products' Entry list -->
+              <div id="cart-entrylist" class="font-semibold"></div>
+
+              <hr class="my-5" />
+
+              <!-- Calculation -->
+              <div class="font-semibold">
+                <!-- Total price -->
+                <div class="flex flex-row w-[100%]">
+                  <div class="w-[35%]">
+                    <p>Total price</p>
+                  </div>
+
+                  <div class="w-[5%]">
+                    <p>:</p>
+                  </div>
+
+                  <div class="text-end w-[50%] pr-2">
+                    <p>
+                      <span id="total-price" class="text-xl text-gray-500 px-2"
+                        >0.00</span
+                      >
+                    </p>
+                  </div>
+
+                  <div class="w-[10%]">
+                    <span class="text-xs">BDT</span>
+                  </div>
+                </div>
+
+                <!-- Discount on Total price -->
+                <div class="flex flex-row w-[100%]">
+                  <div class="w-[35%]">
+                    <p>Discount</p>
+                  </div>
+
+                  <div class="w-[5%]">
+                    <p>:</p>
+                  </div>
+
+                  <div class="text-end w-[50%] pr-2">
+                    <p>
+                      <span
+                        id="discount-price"
+                        class="text-xl text-red-400 px-2"
+                        >0.00</span
+                      >
+                    </p>
+                  </div>
+
+                  <div class="w-[10%]">
+                    <span class="text-xs">BDT</span>
+                  </div>
+                </div>
+
+                <!-- Vat on Total price -->
+                <div class="flex flex-row w-[100%]">
+                  <div class="w-[35%]">
+                    <p>Vat (<span id="vat-percent"></span>%)</p>
+                  </div>
+
+                  <div class="w-[5%]">
+                    <p>:</p>
+                  </div>
+
+                  <div class="text-end w-[50%] pr-2">
+                    <p>
+                      <span id="product-vat" class="text-xl text-gray-400 px-2"
+                        >0.00</span
+                      >
+                    </p>
+                  </div>
+
+                  <div class="w-[10%]">
+                    <span class="text-xs">BDT</span>
+                  </div>
+                </div>
+
+                <!-- Shipping Charge on Total price -->
+                <div class="flex flex-row w-[100%]">
+                  <div class="w-[35%]">
+                    <p>Shipping</p>
+                  </div>
+
+                  <div class="w-[5%]">
+                    <p>:</p>
+                  </div>
+
+                  <div class="text-end w-[50%] pr-2">
+                    <p>
+                      <span
+                        id="shipping-charge"
+                        class="text-xl text-gray-400 px-2"
+                        >0.00</span
+                      >
+                    </p>
+                  </div>
+
+                  <div class="w-[10%]">
+                    <span class="text-xs">BDT</span>
+                  </div>
+                </div>
+
+                <hr class="my-5" />
+
+                <!-- Total price After Discount -->
+                <div class="flex flex-row w-[100%]">
+                  <div class="w-[35%]">
+                    <p>Total</p>
+                  </div>
+
+                  <div class="w-[5%]">
+                    <p>:</p>
+                  </div>
+
+                  <div class="text-end w-[50%] pr-2">
+                    <p>
+                      <span id="total" class="text-xl text-green-500 px-2"
+                        >0.00</span
+                      >
+                    </p>
+                  </div>
+
+                  <div class="w-[10%]">
+                    <span class="text-xs">BDT</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Button : Make Purchase -->
+              <div class="card-actions mt-5">
+                <button
+                  id="btn-make-purchase"
+                  onclick="purchase_conformation.showModal()"
+                  class="btn text-white bg-pink-600 w-full"
+                >
+                  Make Purchase
+                </button>
+
+                <dialog
+                  id="purchase_conformation"
+                  class="modal modal-bottom sm:modal-middle"
+                >
+                  <div class="modal-box">
+                    <!-- Text : Purchase Conformation -->
+                    <div class="text-center">
+                      <figure>
+                        <img
+                          src="./images/congo.png"
+                          alt="Purchase Validation Image"
+                          class="mx-auto"
+                        />
+                      </figure>
+
+                      <h3 class="font-bold text-5xl">Congratulations</h3>
+
+                      <p class="font-normal py-4">
+                        You've Purchased The Product.
+                      </p>
+
+                      <div class="modal-action flex justify-center">
+                        <form method="dialog">
+                          <button
+                            onclick="onPageRefresh()"
+                            class="btn text-white bg-pink-600 px-10"
+                          >
+                            <!-- <a href="./index.html">Go Home</a> -->
+                            Go Home
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </dialog>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <!-- .......... JavaScript Files : Mine .......... -->
+    <script src="./js/validation_Common.js"></script>
+    <script src="./js/utilities.js"></script>
+    <script src="./js/coupon.js"></script>
+    <script src="./js/cart_Calculation.js"></script>
+  </body>
+</html>
