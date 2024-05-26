@@ -1,0 +1,14 @@
+# Milestone 5 - Interactive JavaScript (JavaScript In a Relation)
+_________________________________________________________________
+_________________________________________________________________
+
+
+
+
+
+6. Module   29 : Build Summer Sale using DOM manipulation
+----------------------------------------------------------------
+
+	29-1 Understand the project requirements
+	29-2 Assignment Deadline and Private Repository
+	Assignment 5
