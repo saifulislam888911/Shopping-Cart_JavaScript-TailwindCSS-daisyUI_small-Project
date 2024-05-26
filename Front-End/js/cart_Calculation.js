@@ -13,7 +13,6 @@ function addProductToCart() {
   addProductToCartEntryList(productName, productPrice);
   calculateCartAddingPrice(productPrice);
 
-  /* ... Validation Checking : Button ... */
   update_ButtonState_MakePurchase();
   update_ButtonState_CouponApply();
 }
@@ -78,7 +77,6 @@ function delete_CartProduct(dataId, dataPriceId) {
 
   resetInnerHtmlComponent(dataId, "");
 
-  /* ... Validation Checking : Button ... */
   update_ButtonState_MakePurchase();
 }
 

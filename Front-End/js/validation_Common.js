@@ -37,10 +37,10 @@ function showToast(message, type) {
   const toast = document.createElement("div");
   toast.className = `alert ${getToastTypeClass(type)} shadow-lg`;
   toast.innerHTML = `
-      <div>
-        <span class="text-white">${message}</span>
-      </div>
-    `;
+                      <div>
+                        <span class="text-white">${message}</span>
+                      </div>
+                    `;
 
   toastContainer.appendChild(toast);
 

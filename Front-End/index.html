@@ -32,7 +32,9 @@
         class="z-10 fixed top-5 right-5 space-y-4"
       ></div>
 
-      <!-- Header : Section No.1 : Sale's Offer Banner -->
+      <!-- .................... 
+        Header : Section No.1 : Sale's Offer Banner 
+      .................... -->
       <banner
         class="flex flex-col md:flex-row lg:flex-row bg-orange-100 mx-auto"
       >
@@ -71,7 +73,9 @@
     </header>
 
     <main class="flex flex-col md:flex-row lg:flex-row">
-      <!-- Section No.1 : Products' Card -->
+      <!-- .................... 
+        Section No.1 : Products' Card 
+      .................... -->
       <section class="mx-auto">
         <!-- Division No.1 : Kitchenware -->
         <div class="mt-10">
@@ -425,7 +429,9 @@
         </div>
       </section>
 
-      <!-- Section No.2 : Order-Cart -->
+      <!-- ....................
+        Section No.2 : Order-Cart 
+      .................... -->
       <section class="mx-auto">
         <div class="mt-24">
           <!-- Division No.1 : Card : Coupon -->
@@ -433,6 +439,7 @@
             <div class="card-body">
               <h2 class="card-title">Have coupon?</h2>
 
+              <!-- Input Field & Button : Coupon Apply -->
               <div class="flex flex-row">
                 <input
                   type="text"
@@ -467,7 +474,7 @@
 
               <hr class="my-5" />
 
-              <!-- Calculation -->
+              <!-- Calculation : Total-Price, Discount, Vat, Shipping, Total -->
               <div class="font-semibold">
                 <!-- Total price -->
                 <div class="flex flex-row w-[100%]">
@@ -601,6 +608,7 @@
                   Make Purchase
                 </button>
 
+                <!-- Modal : (Button : Make Purchase) : Purchase Conformation -->
                 <dialog
                   id="purchase_conformation"
                   class="modal modal-bottom sm:modal-middle"
@@ -622,6 +630,7 @@
                         You've Purchased The Product.
                       </p>
 
+                      <!-- Button : Go Home : all value will be reset -->
                       <div class="modal-action flex justify-center">
                         <form method="dialog">
                           <button
@@ -648,7 +657,7 @@
     <!-- .......... JavaScript Files : Mine .......... -->
     <script src="./js/validation_Common.js"></script>
     <script src="./js/utilities.js"></script>
-    <script src="./js/coupon.js"></script>
     <script src="./js/cart_Calculation.js"></script>
+    <script src="./js/coupon.js"></script>
   </body>
 </html>

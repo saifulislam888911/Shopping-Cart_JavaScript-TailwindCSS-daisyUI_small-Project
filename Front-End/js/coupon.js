@@ -63,7 +63,6 @@ function calculateDiscountPrice(onlyCartProductPriceTotal) {
     resetInnerTextComponent("discount-price", "0.00");
   }
 
-  /* ... Validation Checking : Button ... */
   update_ButtonState_CouponApply();
 }
 
@@ -79,7 +78,6 @@ function couponCodeRemove() {
   const cartProductPriceTotalPrevious = getTextElementValueById("total-price");
   calculateCartTotalPrice(cartProductPriceTotalPrevious);
 
-  /* ... Validation Checking : Button ... */
   update_ButtonState_CouponApply();
 
   showToast("Coupon Removed", "error");
