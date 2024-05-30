@@ -8,9 +8,7 @@ Summary : Html5, Tailwind CSS, daisyUI, JavaScript.
 Helped From : Programming Hero Online-Class, Self-Practice, Self-Study. 
 
 
-# Branch : 
-Main : For Version Update. 
-Development : For Updating new features. Always Upto Date. Clean Codes (Delete Comments & Notes). 
+# Branch : ("DevWithNotes-02") 
 DevWithNotes : For Pushing working codes alongside with Comments & Notes. Always Upto Date. 
 
 
