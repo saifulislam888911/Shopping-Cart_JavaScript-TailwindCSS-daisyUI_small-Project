@@ -68,15 +68,18 @@ function setTextElementValueById(textElementId, newValue) {
 .......... */
 function resetInnerHtmlComponent(innerHtml_Component_Id, newValueString) {
   const innerHtml_Component = document.getElementById(innerHtml_Component_Id);
+
   innerHtml_Component.innerHTML = newValueString;
 }
 
 function resetInnerTextComponent(innerText_Component_Id, newValueString) {
   const innerText_Component = document.getElementById(innerText_Component_Id);
+
   innerText_Component.innerText = newValueString;
 }
 
 function resetInputFieldComponent(inputField_Component_Id, newValue) {
   const inputField_Component = document.getElementById(inputField_Component_Id);
+  
   inputField_Component.value = newValue;
 }

@@ -55,8 +55,6 @@ function calculateDiscountPrice(onlyCartProductPriceTotal) {
     const cartTotalPrice = getTextElementValueById("total");
     const cartTotalPriceAfterDiscount = cartTotalPrice - discountAmount;
     setTextElementValueById("total", cartTotalPriceAfterDiscount);
-
-    console.log(discountAmount, cartTotalPriceAfterDiscount);
   } else if (couponApply_flag === 1 && onlyCartProductPriceTotal < 200) {
     couponCodeRemove();
   } else {
@@ -116,10 +114,10 @@ function vMsgShow_ValidCouponApply(couponCode, discountPercentage) {
   const vMsgForCouponApply = document.createElement("p");
   vMsgForCouponApply.classList.add("font-bold", "text-xs", "text-green-400");
   vMsgForCouponApply.innerHTML = `
-                                    "${couponCode}" for ${discountPercentage}% is Applied.
-                                    <span onclick="couponCodeRemove()" class="text-sm text-red-400 ml-2">
-                                        <i class="fa-regular fa-circle-xmark" style="cursor:pointer;"></i>
-                                    </span>
+                                  "${couponCode}" for ${discountPercentage}% is Applied.
+                                  <span onclick="couponCodeRemove()" class="text-sm text-red-400 ml-2">
+                                    <i class="fa-regular fa-circle-xmark" style="cursor:pointer;"></i>
+                                  </span>
                                 `;
 
   vMsg_CouponApply.appendChild(vMsgForCouponApply);
