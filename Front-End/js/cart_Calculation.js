@@ -6,9 +6,11 @@ let vatPercent = 5;
 /* ..........
     Function : Add Product To Cart
 .......... */
-function addProductToCart() {
-  const productName = getTextElementValueStringById("product-name");
-  const productPrice = getTextElementValueById("product-price");
+function addProductToCart(productName_Id, productPrice_Id) {
+  debugger;
+
+  const productName = getTextElementValueStringById(productName_Id);
+  const productPrice = getTextElementValueById(productPrice_Id);
 
   addProductToCartEntryList(productName, productPrice);
   calculateCartAddingPrice(productPrice);

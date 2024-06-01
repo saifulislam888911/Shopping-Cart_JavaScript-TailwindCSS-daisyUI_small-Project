@@ -60,6 +60,7 @@ function calculateDiscountPrice(onlyCartProductPriceTotal) {
   } else if (couponApply_flag === 1 && onlyCartProductPriceTotal < 200) {
     couponCodeRemove();
   } else {
+    resetInnerHtmlComponent("vMsg-couponApply", "");
     resetInnerTextComponent("discount-price", "0.00");
   }
 
